@@ -1,6 +1,11 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+#include <math.h>
 int main(){
-    cout << sizeof(float) <<" "<<sizeof(double);
-    return 0;
+    int n;
+    scanf("%d",&n);
+    printf("%d",1<<n);
+
+
+
+return 0;
 }
