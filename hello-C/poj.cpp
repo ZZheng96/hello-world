@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
     unsigned int x;
-int y;
+    int y;
     cin >> x>>y;
     if( x>y ) 
         cout << ">" ;
