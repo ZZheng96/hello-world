@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 int main(){
-    unsigned int x;
-    int y;
-    cin >> x>>y;
-    if( x>y ) 
-        cout << ">" ;
-    else if(x==y)
-        cout << "=";
-else cout << "<";
+
+    int a, b;
+    cin >> a >> b;
+    if(a>=60 && b<60) cout << "1";
+    else if(a<60 && b>=60) cout << "1";
+    else cout << "0";
     return 0;
 }
