@@ -1,5 +1,9 @@
-
-a=input()
-print("  "+a)
-print(" "+a+a+a)
-print(a+a+a+a+a)
+s=input()
+a,b,c=s.split();
+a=int(a)
+b=int(b)
+c=int(c)
+if a+b>c and a+c>b and b+c>a:
+    print("YES")
+else:
+    print("NO")
