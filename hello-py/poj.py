@@ -1,7 +1,9 @@
-n=int(input())
+
 s=input().split()
-maxV,minV = int(s[0]),int(s[0])
-for i in s:
-    maxV = max(maxV,int(i))
-    minV = min(minV,int(i))
-print(maxV-minV)
+L,R=int(s[0]),int(s[1])
+num=0
+for i in range(L,R+1):
+    for j in str(i):
+        if j=="2":
+            num+=1
+print(num)
