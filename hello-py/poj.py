@@ -34,4 +34,26 @@ print(s1['刘一哥'],s1[0])
 print(df['语文']['刘一哥'])
 s2=df.loc['王二姐']
 print(s2['性别'],s2['语文'],s2[2])
+
+print("---下面是DataFrame的分析和统计---")
+print(df.T)
+#df.T是df的转置矩阵,即行列互换的矩阵
+print(df.sort_values('语文',ascending=False)) #按语文成绩降序排列
+# print(df.sum()['语文'],df.mean()['数学'],df.median()['英语'])
+#>>435 85.5 101.0 语文分数之和、数学平均分、英语中位数
+print(df['语文'].sum(), df['数学'].mean(), df['英语'].median())
+
+print(df.min()['语文'],df.max()['数学'])
+#>>100 115 语文最低分，数学最高分
+# print(df.max(axis = 1)['王二姐'])
+#>>115 王二姐的最高分科目的分数
+print(df[['语文', '数学', '英语']].max(axis=1)['王二姐'])
+
+print(df['语文'].idxmax())
+#>>王二姐
+# 语文最高分所在行的标签
+print(df['数学'].argmin())
+#>>2
+# 数学最低分所在行的行号
+print(df.loc[(df['语文'] > 100) & (df['数学'] >= 85)])
       
