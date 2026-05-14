@@ -4,7 +4,8 @@ int main(){
 
     int a;
     cin >> a;
-    if(a==1 || a==3 || a==5) cout << "NO";
-    else cout << "YES";
+    if(a/3.0+50>a/1.2) cout << "Walk";
+    else if(a/3.0+50==a/1.2) cout << "All";
+    else cout << "Bike";
     return 0;
 }
