@@ -1,9 +1,32 @@
+// #include <reg52.h>
+
+// sbit led = P2^7;
+
+// //??????
+// void delay_ms(unsigned int xms)   //@12MHz
+// {
+//     unsigned int i, j;
+//     for(i=xms;i>0;i--)
+//     {
+//         for(j=124;j>0;j--)
+//         {}
+//     }
+// }
+
+// void main()
+// {
+//     while(1)
+//     {
+//         led = 0;
+//         delay_ms(500);
+//         led = 1;
+//         delay_ms(500);
+//     }
+// }
+
 #include <reg52.h>
 
-sbit led = P2^7;
-
-//??????
-void delay_ms(unsigned int xms)   //@12MHz
+void delay_ms(unsigned int xms) 
 {
     unsigned int i, j;
     for(i=xms;i>0;i--)
@@ -13,13 +36,19 @@ void delay_ms(unsigned int xms)   //@12MHz
     }
 }
 
+void open_led(unsigned int num){
+    P2 = 0xFF & ~(1 << num);
+}
+
 void main()
 {
     while(1)
     {
-        led = 0;
+        open_led(7);
         delay_ms(500);
-        led = 1;
+        open_led(6);
+        delay_ms(500);
+        open_led(5);
         delay_ms(500);
     }
 }
