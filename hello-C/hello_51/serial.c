@@ -17,9 +17,20 @@ void UARTinit(){
 	  PCON |= 0x00;
 }
 
+void send_str(char str[]){
+	int i = 0;
+	while(str[i] != '\0'){
+		SBUF = str[i];
+		while(TI == 0);  //直到TI=1溢出
+		TI = 0;  //回复
+		i++;
+	}
+}
+
 void main(){
 	  UARTinit();
-	  SBUF = 0x30; 
+	  //SBUF = 0x30; 
+	  send_str("Hello world!");
 	  while(1){
 		}
 }
